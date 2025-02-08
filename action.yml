@@ -1,0 +1,20 @@
+name: 'Upload to AppDeployPro'
+description: 'Uploads a build to AppDeployPro'
+inputs:
+  releaseId:
+    description: 'ID of the AppDeployPro release.'
+    required: true
+  token:
+    description: 'AppDeployPro access token.'
+    required: true
+  file:
+    description: 'Path to apk/aab/ipa file.'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.releaseId }}
+    - ${{ inputs.token }}
+    - ${{ inputs.file }}
+
