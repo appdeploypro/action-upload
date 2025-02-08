@@ -10,6 +10,10 @@ inputs:
   file:
     description: 'Path to apk/aab/ipa file.'
     required: true
+  submit:
+    description: 'Submit this build to the app store.'
+    required: false
+    default: 'false'
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -17,4 +21,5 @@ runs:
     - ${{ inputs.releaseId }}
     - ${{ inputs.token }}
     - ${{ inputs.file }}
+    - ${{ inputs.submit }}
 
