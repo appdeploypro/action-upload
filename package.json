@@ -1,0 +1,14 @@
+{
+  "name": "appdeploypro-upload-action",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "keywords": [],
+  "author": "Alex Fu <alexfu@appdeploypro.com>",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/github": "^6.0.0"
+  }
+}

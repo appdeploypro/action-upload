@@ -1,25 +1,16 @@
 name: 'Upload to AppDeployPro'
 description: 'Uploads a build to AppDeployPro'
 inputs:
-  releaseId:
-    description: 'ID of the AppDeployPro release.'
-    required: true
   token:
     description: 'AppDeployPro access token.'
     required: true
   file:
     description: 'Path to apk/aab/ipa file.'
     required: true
-  submit:
-    description: 'Submit this build to the app store.'
-    required: false
-    default: 'false'
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: 'node20'
+  main: 'index.js'
   args:
-    - ${{ inputs.releaseId }}
     - ${{ inputs.token }}
     - ${{ inputs.file }}
-    - ${{ inputs.submit }}
 
